@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.2 on win32)" generated="20230328 10:02:34.756" rpa="false" schemaversion="3">
+<suite id="s1" name="Home page" source="c:\Users\Owner\Desktop\Robot_framework\PJ03_Site_emploi_OIQ\Test_Case_Site_emploi\Home_page.robot">
+<test id="s1-t1" name="TC_01_processus_d'achat" line="5">
+<kw name="En tant qu’Admin OIQ, je me connecte à Laravel" library="Ressources01">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL_Site_emploi}</arg>
+<arg>${Navigateur}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230328 10:02:35.230" level="INFO">Opening browser 'chrome' to base url 'https://oiqemploilaravel-uat.logientlab.com/admin/login'.</msg>
+<status status="PASS" starttime="20230328 10:02:35.228" endtime="20230328 10:02:38.502"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230328 10:02:38.503" endtime="20230328 10:02:38.638"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath://input[@id="username"]</arg>
+<arg>admin_user</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230328 10:02:38.642" level="INFO">Typing text 'admin_user' into text field 'xpath://input[@id="username"]'.</msg>
+<status status="PASS" starttime="20230328 10:02:38.640" endtime="20230328 10:02:38.842"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>xpath://input[@id="password"]</arg>
+<arg>7HDIpUH6F%!97Md%</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20230328 10:02:38.844" level="INFO">Typing password into text field 'xpath://input[@id="password"]'.</msg>
+<msg timestamp="20230328 10:02:38.922" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20230328 10:02:39.037" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20230328 10:02:38.843" endtime="20230328 10:02:39.037"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>//button[@class="btn btn-outline-primary btn-sm"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230328 10:02:39.039" level="INFO">Clicking button '//button[@class="btn btn-outline-primary btn-sm"]'.</msg>
+<status status="PASS" starttime="20230328 10:02:39.038" endtime="20230328 10:02:39.159"/>
+</kw>
+<status status="PASS" starttime="20230328 10:02:35.227" endtime="20230328 10:02:39.160"/>
+</kw>
+<kw name="En tant qu’Admin OIQ, je rentre au Site d’emploi à partir de Laravel" library="Ressources01">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>(//span[@class="d-none d-md-block ml-1"])[1]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230328 10:02:39.162" endtime="20230328 10:02:43.961"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>(//span[@class="d-none d-md-block ml-1"])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230328 10:02:43.963" level="INFO">Clicking element '(//span[@class="d-none d-md-block ml-1"])[1]'.</msg>
+<status status="PASS" starttime="20230328 10:02:43.962" endtime="20230328 10:02:47.060"/>
+</kw>
+<status status="PASS" starttime="20230328 10:02:39.161" endtime="20230328 10:02:47.061"/>
+</kw>
+<kw name="En tant qu’Admin OIQ, je rentre dans la 1er étape du processus d’achat" library="Ressources01">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//a[@data-item-id="37"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230328 10:02:47.063" level="INFO">Clicking element '//a[@data-item-id="37"]'.</msg>
+<msg timestamp="20230328 10:02:47.308" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-29.png"&gt;&lt;img src="selenium-screenshot-29.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230328 10:02:47.310" level="FAIL">Element with locator '//a[@data-item-id="37"]' not found.</msg>
+<status status="FAIL" starttime="20230328 10:02:47.062" endtime="20230328 10:02:47.316"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//a[@data-item-id="90"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20230328 10:02:47.318" endtime="20230328 10:02:47.318"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>(//a[@class="btn-arrow"])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20230328 10:02:47.318" endtime="20230328 10:02:47.319"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//a[@class="mw-checkout-modal-buttons btn btn-primary float-end ms-2"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20230328 10:02:47.319" endtime="20230328 10:02:47.319"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//a[@class="mw-checkout-modal-buttons btn btn-primary float-end ms-2"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20230328 10:02:47.319" endtime="20230328 10:02:47.320"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20230328 10:02:47.322" endtime="20230328 10:02:47.323"/>
+</kw>
+<status status="FAIL" starttime="20230328 10:02:47.061" endtime="20230328 10:02:47.323"/>
+</kw>
+<kw name="En tant qu’Admin OIQ, je rentre dans la 2e étape du processus d’achat" library="Ressources01">
+<status status="NOT RUN" starttime="20230328 10:02:47.324" endtime="20230328 10:02:47.325"/>
+</kw>
+<kw name="En tant qu’Admin OIQ, je rentre dans la 3e étape du processus d’achat" library="Ressources01">
+<status status="NOT RUN" starttime="20230328 10:02:47.325" endtime="20230328 10:02:47.327"/>
+</kw>
+<status status="FAIL" starttime="20230328 10:02:35.226" endtime="20230328 10:02:47.327">Element with locator '//a[@data-item-id="37"]' not found.</status>
+</test>
+<status status="FAIL" starttime="20230328 10:02:34.765" endtime="20230328 10:02:47.329"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Home page">Home page</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
