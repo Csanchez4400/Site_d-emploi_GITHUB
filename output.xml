@@ -1,111 +1,363 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.11.2 on win32)" generated="20230328 10:02:34.756" rpa="false" schemaversion="3">
-<suite id="s1" name="Home page" source="c:\Users\Owner\Desktop\Robot_framework\PJ03_Site_emploi_OIQ\Test_Case_Site_emploi\Home_page.robot">
-<test id="s1-t1" name="TC_01_processus_d'achat" line="5">
-<kw name="En tant qu’Admin OIQ, je me connecte à Laravel" library="Ressources01">
+<robot generator="Robot 6.0.2 (Python 3.11.2 on win32)" generated="20230329 10:01:17.610" rpa="false" schemaversion="3">
+<suite id="s1" name="CT 2e etape processus achat" source="c:\Users\Owner\Desktop\Robot_framework\PJ03_Site_emploi_OIQ\Test_Case_Site_emploi\CT_2e_etape_processus_achat.robot">
+<test id="s1-t1" name="CT_2e_etape_processus_achat" line="26">
+<kw name="En tant que responsable principal.e / Administrateur Client, je me connecte au site d'emploi" library="Employeur_Connexion_Site_emploi">
+<arg>${URL_Page}</arg>
+<arg>${Navigateur}</arg>
+<arg>${text_username_Employeur}</arg>
+<arg>${text_password_Employeur}</arg>
 <kw name="Open Browser" library="SeleniumLibrary">
-<arg>${URL_Site_emploi}</arg>
+<arg>${URL_Page}</arg>
 <arg>${Navigateur}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230328 10:02:35.230" level="INFO">Opening browser 'chrome' to base url 'https://oiqemploilaravel-uat.logientlab.com/admin/login'.</msg>
-<status status="PASS" starttime="20230328 10:02:35.228" endtime="20230328 10:02:38.502"/>
+<msg timestamp="20230329 10:01:18.055" level="INFO">Opening browser 'chrome' to base url 'https://entreprises-int.oiq.qc.ca/OIQ/EntrepriseConnexion/ConnexionSiteEmploiUAT.aspx?client_id=TestSiteEmploiUAT&amp;redirect_uri=https:%2F%2Foiqemploilaravel-uat.logientlab.com%2Fapi%2Fsocial_login_process%3Fprovider%3Dimis&amp;scope=&amp;response_type=code&amp;state=TbbAijdw3wbfPN7WRUM9mCZ4Xua3N2e6OnpDszkp'.</msg>
+<status status="PASS" starttime="20230329 10:01:18.053" endtime="20230329 10:01:21.618"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230328 10:02:38.503" endtime="20230328 10:02:38.638"/>
+<status status="PASS" starttime="20230329 10:01:21.619" endtime="20230329 10:01:21.744"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${page_de_connexion_username_Employeur}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20230329 10:01:21.744" endtime="20230329 10:01:21.827"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
-<arg>xpath://input[@id="username"]</arg>
-<arg>admin_user</arg>
+<arg>${page_de_connexion_username_Employeur}</arg>
+<arg>${text_username_Employeur}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230328 10:02:38.642" level="INFO">Typing text 'admin_user' into text field 'xpath://input[@id="username"]'.</msg>
-<status status="PASS" starttime="20230328 10:02:38.640" endtime="20230328 10:02:38.842"/>
+<msg timestamp="20230329 10:01:21.829" level="INFO">Typing text 'charlotte@diageo.ca' into text field '//*[@id='ctl01_TemplateBody_WebPartManager1_gwpciModuleconnexion_ciModuleconnexion_signInUserName']'.</msg>
+<status status="PASS" starttime="20230329 10:01:21.827" endtime="20230329 10:01:22.025"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${page_de_connexion_password_Employeur}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20230329 10:01:22.025" endtime="20230329 10:01:22.104"/>
 </kw>
 <kw name="Input Password" library="SeleniumLibrary">
-<arg>xpath://input[@id="password"]</arg>
-<arg>7HDIpUH6F%!97Md%</arg>
+<arg>${page_de_connexion_password_Employeur}</arg>
+<arg>${text_password_Employeur}</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20230328 10:02:38.844" level="INFO">Typing password into text field 'xpath://input[@id="password"]'.</msg>
-<msg timestamp="20230328 10:02:38.922" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20230328 10:02:39.037" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20230328 10:02:38.843" endtime="20230328 10:02:39.037"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>//button[@class="btn btn-outline-primary btn-sm"]</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20230328 10:02:39.039" level="INFO">Clicking button '//button[@class="btn btn-outline-primary btn-sm"]'.</msg>
-<status status="PASS" starttime="20230328 10:02:39.038" endtime="20230328 10:02:39.159"/>
-</kw>
-<status status="PASS" starttime="20230328 10:02:35.227" endtime="20230328 10:02:39.160"/>
-</kw>
-<kw name="En tant qu’Admin OIQ, je rentre au Site d’emploi à partir de Laravel" library="Ressources01">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>(//span[@class="d-none d-md-block ml-1"])[1]</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230328 10:02:39.162" endtime="20230328 10:02:43.961"/>
+<msg timestamp="20230329 10:01:22.106" level="INFO">Typing password into text field '//input[@name='ctl01$TemplateBody$WebPartManager1$gwpciModuleconnexion$ciModuleconnexion$signInPassword']'.</msg>
+<msg timestamp="20230329 10:01:22.151" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20230329 10:01:22.242" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20230329 10:01:22.105" endtime="20230329 10:01:22.243"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>(//span[@class="d-none d-md-block ml-1"])[1]</arg>
+<arg>${page_de_connexion_bouton_connexion_Employeur}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230328 10:02:43.963" level="INFO">Clicking element '(//span[@class="d-none d-md-block ml-1"])[1]'.</msg>
-<status status="PASS" starttime="20230328 10:02:43.962" endtime="20230328 10:02:47.060"/>
-</kw>
-<status status="PASS" starttime="20230328 10:02:39.161" endtime="20230328 10:02:47.061"/>
-</kw>
-<kw name="En tant qu’Admin OIQ, je rentre dans la 1er étape du processus d’achat" library="Ressources01">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>//a[@data-item-id="37"]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230328 10:02:47.063" level="INFO">Clicking element '//a[@data-item-id="37"]'.</msg>
-<msg timestamp="20230328 10:02:47.308" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-29.png"&gt;&lt;img src="selenium-screenshot-29.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20230328 10:02:47.310" level="FAIL">Element with locator '//a[@data-item-id="37"]' not found.</msg>
-<status status="FAIL" starttime="20230328 10:02:47.062" endtime="20230328 10:02:47.316"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>//a[@data-item-id="90"]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20230328 10:02:47.318" endtime="20230328 10:02:47.318"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>(//a[@class="btn-arrow"])[1]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20230328 10:02:47.318" endtime="20230328 10:02:47.319"/>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>//a[@class="mw-checkout-modal-buttons btn btn-primary float-end ms-2"]</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" starttime="20230328 10:02:47.319" endtime="20230328 10:02:47.319"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>//a[@class="mw-checkout-modal-buttons btn btn-primary float-end ms-2"]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20230328 10:02:47.319" endtime="20230328 10:02:47.320"/>
+<msg timestamp="20230329 10:01:22.245" level="INFO">Clicking element '//*[@id='ctl01_TemplateBody_WebPartManager1_gwpciModuleconnexion_ciModuleconnexion_SubmitButton']'.</msg>
+<status status="PASS" starttime="20230329 10:01:22.244" endtime="20230329 10:01:22.355"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
-<arg>2</arg>
+<arg>3</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" starttime="20230328 10:02:47.322" endtime="20230328 10:02:47.323"/>
+<msg timestamp="20230329 10:01:25.356" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230329 10:01:22.355" endtime="20230329 10:01:25.356"/>
 </kw>
-<status status="FAIL" starttime="20230328 10:02:47.061" endtime="20230328 10:02:47.323"/>
+<status status="PASS" starttime="20230329 10:01:18.052" endtime="20230329 10:01:25.358"/>
 </kw>
-<kw name="En tant qu’Admin OIQ, je rentre dans la 2e étape du processus d’achat" library="Ressources01">
-<status status="NOT RUN" starttime="20230328 10:02:47.324" endtime="20230328 10:02:47.325"/>
+<kw name="1er étape du processus d’achat" library="1er étape du processus d’achat">
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollBy(0,300)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20230329 10:01:25.362" level="INFO">Executing JavaScript:
+window.scrollBy(0,300)
+Without any arguments.</msg>
+<status status="PASS" starttime="20230329 10:01:25.360" endtime="20230329 10:01:27.849"/>
 </kw>
-<kw name="En tant qu’Admin OIQ, je rentre dans la 3e étape du processus d’achat" library="Ressources01">
-<status status="NOT RUN" starttime="20230328 10:02:47.325" endtime="20230328 10:02:47.327"/>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Home_Forfaits}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230329 10:01:27.851" level="INFO">Clicking element '//a[@data-item-id='37']'.</msg>
+<status status="PASS" starttime="20230329 10:01:27.850" endtime="20230329 10:01:27.949"/>
 </kw>
-<status status="FAIL" starttime="20230328 10:02:35.226" endtime="20230328 10:02:47.327">Element with locator '//a[@data-item-id="37"]' not found.</status>
+<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
+<arg>10</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230329 10:01:27.951" endtime="20230329 10:01:27.952"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Home_Acheter_un_forfait}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230329 10:01:27.956" level="INFO">Clicking element '//a[@data-item-id='90']'.</msg>
+<status status="PASS" starttime="20230329 10:01:27.954" endtime="20230329 10:01:30.186"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Acheter_un_forfait_bouton_Ajouter_au_panier}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230329 10:01:30.187" level="INFO">Clicking element '(//a[@class="btn-arrow"])[1]'.</msg>
+<status status="PASS" starttime="20230329 10:01:30.186" endtime="20230329 10:01:30.272"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Acheter_un_forfait_popup_bouton_Passer_à_la_caisse}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230329 10:01:30.275" level="INFO">Clicking element '//a[@class="mw-checkout-modal-buttons btn btn-primary float-end ms-2"]'.</msg>
+<status status="PASS" starttime="20230329 10:01:30.272" endtime="20230329 10:01:34.632"/>
+</kw>
+<status status="PASS" starttime="20230329 10:01:25.359" endtime="20230329 10:01:34.632"/>
+</kw>
+<kw name="2e étape du processus d’achat" library="2e étape du processus d’achat">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Panier_bouton_Appliquer}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230329 10:01:34.636" level="INFO">Clicking element '//button[@id="promo-cart"]'.</msg>
+<status status="PASS" starttime="20230329 10:01:34.634" endtime="20230329 10:01:34.737"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollBy(0,700)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20230329 10:01:34.740" level="INFO">Executing JavaScript:
+window.scrollBy(0,700)
+Without any arguments.</msg>
+<status status="PASS" starttime="20230329 10:01:34.737" endtime="20230329 10:01:34.758"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230329 10:01:35.760" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230329 10:01:34.759" endtime="20230329 10:01:35.760"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Panier_check_box_Accepter_conditions}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230329 10:01:35.762" level="INFO">Clicking element '//input[@type="checkbox"]'.</msg>
+<status status="PASS" starttime="20230329 10:01:35.760" endtime="20230329 10:01:35.855"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Panier_bouton_Passer_à_la_caisse}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230329 10:01:35.857" level="INFO">Clicking element '//a[@id="pre-submit"]'.</msg>
+<status status="PASS" starttime="20230329 10:01:35.855" endtime="20230329 10:01:37.193"/>
+</kw>
+<status status="PASS" starttime="20230329 10:01:34.633" endtime="20230329 10:01:37.194"/>
+</kw>
+<kw name="3e étape du processus d’achat" library="3e étape du processus d’achat">
+<arg>${text_Processus_achat}</arg>
+<arg>${text_Info_facturation}</arg>
+<arg>${text_Info_personnelles}</arg>
+<arg>${text_Prenom}</arg>
+<arg>${text_Nom}</arg>
+<arg>${text_Poste_entreprise}</arg>
+<arg>${text_Groupe}</arg>
+<arg>${text_Info_entreprise}</arg>
+<arg>${text_titre_Entreprise}</arg>
+<arg>${text_titre_Adresse}</arg>
+<arg>${text_Mode_paiement}</arg>
+<arg>${text_Toutes_transactions_chiffrées}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Processus_achat_titre_Processus_achat}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230329 10:01:37.197" endtime="20230329 10:01:37.255"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Processus_achat_titre_Processus_achat}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230329 10:01:37.289" level="INFO">Element '//h2[@class="is-process"]' is displayed.</msg>
+<status status="PASS" starttime="20230329 10:01:37.255" endtime="20230329 10:01:37.291"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Processus_achat_titre_Processus_achat}</arg>
+<arg>${text_Processus_achat}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20230329 10:01:37.293" level="INFO">Verifying element '//h2[@class="is-process"]' contains exact text 'Processus d'achat'.</msg>
+<status status="PASS" starttime="20230329 10:01:37.291" endtime="20230329 10:01:37.330"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Processus_achat_titre_Info_facturation}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230329 10:01:37.330" endtime="20230329 10:01:37.365"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Processus_achat_titre_Info_facturation}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230329 10:01:37.396" level="INFO">Element '//h5[text()= "Informations de facturation" ]' is displayed.</msg>
+<status status="PASS" starttime="20230329 10:01:37.366" endtime="20230329 10:01:37.396"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Processus_achat_titre_Info_facturation}</arg>
+<arg>${text_Info_facturation}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20230329 10:01:37.398" level="INFO">Verifying element '//h5[text()= "Informations de facturation" ]' contains exact text 'Informations de facturation'.</msg>
+<status status="PASS" starttime="20230329 10:01:37.396" endtime="20230329 10:01:37.435"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Processus_achat_titre_Prenom}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230329 10:01:37.435" endtime="20230329 10:01:37.475"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Processus_achat_titre_Prenom}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230329 10:01:37.507" level="INFO">Element '//div[@class="prefix"][text()="Prénom" ]' is displayed.</msg>
+<status status="PASS" starttime="20230329 10:01:37.476" endtime="20230329 10:01:37.508"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Processus_achat_titre_Prenom}</arg>
+<arg>${text_Prenom}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20230329 10:01:37.511" level="INFO">Verifying element '//div[@class="prefix"][text()="Prénom" ]' contains exact text 'PRÉNOM'.</msg>
+<status status="PASS" starttime="20230329 10:01:37.508" endtime="20230329 10:01:37.551"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Processus_achat_titre_Nom}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230329 10:01:37.552" endtime="20230329 10:01:37.588"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Processus_achat_titre_Nom}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230329 10:01:37.619" level="INFO">Element '//div[@class="prefix"][text()="Nom" ]' is displayed.</msg>
+<status status="PASS" starttime="20230329 10:01:37.589" endtime="20230329 10:01:37.619"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Processus_achat_titre_Nom}</arg>
+<arg>${text_Nom}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20230329 10:01:37.621" level="INFO">Verifying element '//div[@class="prefix"][text()="Nom" ]' contains exact text 'NOM'.</msg>
+<status status="PASS" starttime="20230329 10:01:37.620" endtime="20230329 10:01:37.658"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Processus_achat_titre_Poste_entreprise}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230329 10:01:37.660" endtime="20230329 10:01:37.696"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Processus_achat_titre_Poste_entreprise}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230329 10:01:37.727" level="INFO">Element '//div[@class="prefix"][text()="Poste dans l'entreprise" ]' is displayed.</msg>
+<status status="PASS" starttime="20230329 10:01:37.697" endtime="20230329 10:01:37.727"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Processus_achat_titre_Poste_entreprise}</arg>
+<arg>${text_Poste_entreprise}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20230329 10:01:37.729" level="INFO">Verifying element '//div[@class="prefix"][text()="Poste dans l'entreprise" ]' contains exact text 'POSTE DANS L'ENTREPRISE'.</msg>
+<status status="PASS" starttime="20230329 10:01:37.728" endtime="20230329 10:01:37.767"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Processus_achat_titre_Groupe}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230329 10:01:37.767" endtime="20230329 10:01:37.851"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Processus_achat_titre_Groupe}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230329 10:01:37.882" level="INFO">Element '//div[@class="prefix"][text()="Groupe" ]' is displayed.</msg>
+<status status="PASS" starttime="20230329 10:01:37.852" endtime="20230329 10:01:37.882"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Processus_achat_titre_Groupe}</arg>
+<arg>${text_Groupe}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20230329 10:01:37.885" level="INFO">Verifying element '//div[@class="prefix"][text()="Groupe" ]' contains exact text 'GROUPE'.</msg>
+<status status="PASS" starttime="20230329 10:01:37.883" endtime="20230329 10:01:37.921"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Processus_achat_titre_Info_entreprise}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230329 10:01:37.922" endtime="20230329 10:01:37.959"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Processus_achat_titre_Info_entreprise}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230329 10:01:37.988" level="INFO">Element '//div[@class="box-title"][text()="Informations de l'entreprise" ]' is displayed.</msg>
+<status status="PASS" starttime="20230329 10:01:37.960" endtime="20230329 10:01:37.988"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Processus_achat_titre_Info_entreprise}</arg>
+<arg>${text_Info_entreprise}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20230329 10:01:37.990" level="INFO">Verifying element '//div[@class="box-title"][text()="Informations de l'entreprise" ]' contains exact text 'Informations de l'entreprise'.</msg>
+<status status="PASS" starttime="20230329 10:01:37.989" endtime="20230329 10:01:38.025"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Processus_achat_titre_Entreprise}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230329 10:01:38.026" endtime="20230329 10:01:38.064"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Processus_achat_titre_Entreprise}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230329 10:01:38.093" level="INFO">Element '//div[@class="prefix"][text()="Entreprise" ]' is displayed.</msg>
+<status status="PASS" starttime="20230329 10:01:38.064" endtime="20230329 10:01:38.093"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Processus_achat_titre_Entreprise}</arg>
+<arg>${text_titre_Entreprise}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20230329 10:01:38.095" level="INFO">Verifying element '//div[@class="prefix"][text()="Entreprise" ]' contains exact text 'ENTREPRISE'.</msg>
+<status status="PASS" starttime="20230329 10:01:38.094" endtime="20230329 10:01:38.136"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Processus_achat_titre_Adresse}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230329 10:01:38.137" endtime="20230329 10:01:38.172"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Processus_achat_titre_Adresse}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230329 10:01:38.205" level="INFO">Element '//div[@class="prefix"][text()="Adresse" ]' is displayed.</msg>
+<status status="PASS" starttime="20230329 10:01:38.173" endtime="20230329 10:01:38.205"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Processus_achat_titre_Adresse}</arg>
+<arg>${text_titre_Adresse}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20230329 10:01:38.208" level="INFO">Verifying element '//div[@class="prefix"][text()="Adresse" ]' contains exact text 'ADRESSE'.</msg>
+<status status="PASS" starttime="20230329 10:01:38.205" endtime="20230329 10:01:38.244"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Processus_achat_titre_Mode_paiement}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230329 10:01:38.245" endtime="20230329 10:01:38.284"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Processus_achat_titre_Mode_paiement}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230329 10:01:38.312" level="INFO">Element '//h5[text()="Mode de paiement"]' is displayed.</msg>
+<status status="PASS" starttime="20230329 10:01:38.285" endtime="20230329 10:01:38.312"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Processus_achat_titre_Mode_paiement}</arg>
+<arg>${text_Mode_paiement}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20230329 10:01:38.314" level="INFO">Verifying element '//h5[text()="Mode de paiement"]' contains exact text 'Mode de paiement'.</msg>
+<status status="PASS" starttime="20230329 10:01:38.313" endtime="20230329 10:01:38.353"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Processus_achat_texte_Toutes_transactions_chiffrées}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230329 10:01:38.353" endtime="20230329 10:01:38.390"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Processus_achat_texte_Toutes_transactions_chiffrées}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230329 10:01:38.419" level="INFO">Element '//span[@class="is-process"]' is displayed.</msg>
+<status status="PASS" starttime="20230329 10:01:38.390" endtime="20230329 10:01:38.420"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Processus_achat_texte_Toutes_transactions_chiffrées}</arg>
+<arg>${text_Toutes_transactions_chiffrées}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20230329 10:01:38.423" level="INFO">Verifying element '//span[@class="is-process"]' contains exact text 'Toutes les transactions sont sécurisées et chiffrées.'.</msg>
+<status status="PASS" starttime="20230329 10:01:38.420" endtime="20230329 10:01:38.458"/>
+</kw>
+<status status="PASS" starttime="20230329 10:01:37.194" endtime="20230329 10:01:38.460"/>
+</kw>
+<status status="PASS" starttime="20230329 10:01:18.049" endtime="20230329 10:01:38.460"/>
 </test>
-<status status="FAIL" starttime="20230328 10:02:34.765" endtime="20230328 10:02:47.329"/>
+<status status="PASS" starttime="20230329 10:01:17.621" endtime="20230329 10:01:38.463"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="Home page">Home page</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="CT 2e etape processus achat">CT 2e etape processus achat</stat>
 </suite>
 </statistics>
 <errors>

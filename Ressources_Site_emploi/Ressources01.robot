@@ -4,12 +4,14 @@ Library    XML
 Resource    ../../PJ02_Robot_pj1/Ressources/ressosyncho01.robot
 
 *** Variables ***
-${URL_Site_emploi}=    https://oiqemploilaravel-uat.logientlab.com/admin/login
+${URL_Site_emploi_Admin_OIQ}=    https://oiqemploilaravel-uat.logientlab.com/admin/login
+${URL_Site_emploi_employeurs}=    https://entreprises-int.oiq.qc.ca/OIQ/EntrepriseConnexion/ConnexionSiteEmploiUAT.aspx?client_id=TestSiteEmploiUAT&redirect_uri=https:%2F%2Foiqemploilaravel-uat.logientlab.com%2Fapi%2Fsocial_login_process%3Fprovider%3Dimis&scope=&response_type=code&state=TbbAijdw3wbfPN7WRUM9mCZ4Xua3N2e6OnpDszkp
 ${Navigateur}=    chrome
+
   
 *** Keywords ***
 En tant qu’Admin OIQ, je me connecte à Laravel 
-    Open Browser    ${URL_Site_emploi}    ${Navigateur}
+    Open Browser    ${URL_Site_emploi_Admin_OIQ}    ${Navigateur}
     #Set Window Size    1900    2000
     Maximize Browser Window
     Input Text    xpath://input[@id="username"]    admin_user
@@ -18,30 +20,28 @@ En tant qu’Admin OIQ, je me connecte à Laravel
 En tant qu’Admin OIQ, je rentre au Site d’emploi à partir de Laravel 
     Wait Until Element Is Visible    (//span[@class="d-none d-md-block ml-1"])[1]
     Click Element    (//span[@class="d-none d-md-block ml-1"])[1]
-En tant qu’Admin OIQ, je rentre dans la 1er étape du processus d’achat  
+    Click Element    //a[@class="logo-footer"]
+
+En tant que responsable principal.e / Administrateur Client, je me connecte à Laravel
+    Open Browser    ${URL_Site_emploi_employeurs}    ${Navigateur}
+    Maximize Browser Window
+    Input Text    //*[@id="ctl01_TemplateBody_WebPartManager1_gwpciModuleconnexion_ciModuleconnexion_signInUserName"]    charlotte@diageo.ca
+    Set Selenium Implicit Wait    10 
+    Input Password    xpath://input[@name="ctl01$TemplateBody$WebPartManager1$gwpciModuleconnexion$ciModuleconnexion$signInPassword"]    oiq1234     
+    Click Button    //*[@id="ctl01_TemplateBody_WebPartManager1_gwpciModuleconnexion_ciModuleconnexion_SubmitButton"]
+
+En tant que XXX, je rentre dans la 1er étape du processus d’achat
+    Execute JavaScript    window.scrollBy(0,300)
     Click Element    //a[@data-item-id="37"]
+    Set Selenium Implicit Wait    10 
     Click Element    //a[@data-item-id="90"]
     Click Element    (//a[@class="btn-arrow"])[1]
     Wait Until Element Is Visible    //a[@class="mw-checkout-modal-buttons btn btn-primary float-end ms-2"]
     Click Element    //a[@class="mw-checkout-modal-buttons btn btn-primary float-end ms-2"]
     Sleep    2
-    #Wait Until Element Is Visible    //*[@id="terms-check"and@name="terms-check"]
-    #Select Checkbox    //input[@id="terms-check"]
-    #Click Element    //input[@type="checkbox"]
-    #Scroll Element Into View    //*[@id="terms-check"and@name="terms-check"]
-    #Sleep    3
-    #Click Element    //*[@id="terms-check"and@name="terms-check"]
-    #Set Selenium Implicit Wait    10
-    #Click Element At Coordinates    //div[@class="terms-check"]    1309    606
-    #Sleep    3
-    #Scroll Element Into View    //*[@id="terms-container"] 
-    #Set Selenium Implicit Wait    5
-En tant qu’Admin OIQ, je rentre dans la 2e étape du processus d’achat
+En tant que XXX, je rentre dans la 2e étape du processus d’achat
     Click Element    //button[@id="promo-cart"]
-    #Click Element    //a[@type="button"]
-    #Scroll Element Into View    a[@type="button"]
     Sleep    2
-    #Set Selenium Implicit Wait    10
     Wait Until Page Contains    J'accepte les conditions générales et vie privé
     Wait Until Element Is Enabled    //div[@class="terms-check"]
     Wait Until Element Is Visible    //div[@class="terms-check"]
@@ -61,7 +61,7 @@ En tant qu’Admin OIQ, je rentre dans la 2e étape du processus d’achat
     Sleep    1
     Click Element    //input[@type="checkbox"]
     Click Element    //a[@id="pre-submit"]
-En tant qu’Admin OIQ, je rentre dans la 3e étape du processus d’achat
+En tant que XXX, je rentre dans la 3e étape du processus d’achat
     Wait Until Element Is Visible    //h2[@class="is-process"]
     Element Should Be Visible    //h2[@class="is-process"]
     Element Text Should Be    //h2[@class="is-process"]    Processus d'achat
@@ -83,8 +83,6 @@ En tant qu’Admin OIQ, je rentre dans la 3e étape du processus d’achat
     Wait Until Element Is Visible    //div[@class="prefix"][text()="Groupe" ]
     Element Should Be Visible    //div[@class="prefix"][text()="Groupe" ]
     Element Text Should Be    //div[@class="prefix"][text()="Groupe" ]    GROUPE
-    #Execute Javascript    window.scrollTo(0,400)
-    #Sleep    1
     Wait Until Element Is Visible    //div[@class="box-title"][text()="Informations de l'entreprise" ]
     Element Should Be Visible    //div[@class="box-title"][text()="Informations de l'entreprise" ]
     Element Text Should Be    //div[@class="box-title"][text()="Informations de l'entreprise" ]    Informations de l'entreprise
@@ -103,11 +101,11 @@ En tant qu’Admin OIQ, je rentre dans la 3e étape du processus d’achat
     Page Should Contain Radio Button    (//input[@type="radio"])[1]
     Wait Until Element Is Visible    (//div[@class="custom-control custom-radio checkout-v2-radio pl-0 pt-2"])[1]
     Element Should Be Visible    (//div[@class="custom-control custom-radio checkout-v2-radio pl-0 pt-2"])[1]
-    Element Text Should Be    (//div[@class="custom-control custom-radio checkout-v2-radio pl-0 pt-2"])[1]    Moneris payment
+    Element Text Should Be    (//div[@class="custom-control custom-radio checkout-v2-radio pl-0 pt-2"])[1]    Carte de crédit
     Page Should Contain Radio Button    (//input[@type="radio"])[2]
     Wait Until Element Is Visible    (//div[@class="custom-control custom-radio checkout-v2-radio pl-0 pt-2"])[2]
     Element Should Be Visible    (//div[@class="custom-control custom-radio checkout-v2-radio pl-0 pt-2"])[2]
-    Element Text Should Be    (//div[@class="custom-control custom-radio checkout-v2-radio pl-0 pt-2"])[2]    Paypal Express
+    Element Text Should Be    (//div[@class="custom-control custom-radio checkout-v2-radio pl-0 pt-2"])[2]    Paypal
     Execute JavaScript    window.scrollBy(0,1000)
     Sleep    1
     Click Element    (//div[@class="custom-control custom-radio checkout-v2-radio pl-0 pt-2"])[2]
@@ -116,11 +114,24 @@ En tant qu’Admin OIQ, je rentre dans la 3e étape du processus d’achat
 
 
     
-En tant qu’Admin OIQ, je veux créer une offre : Détail de l'offre
+En tant que XXX, je veux créer une offre : Détail de l'offre
     Click Element    //a[@class="btn-arrow white btn-offer-creation"]
     Wait Until Element Is Visible    //h5[text()="Détails de l'offre"]
     Element Should Be Visible    //h5[text()="Détails de l'offre"]
     Element Text Should Be    //h5[text()="Détails de l'offre"]    Détails de l'offre
+
+En tant que XXX, je navigue dans la section "Mes communications"
+    Click Element    //a[@data-item-id="95"]
+    Wait Until Element Is Visible    //a[@data-item-id="38"]
+    Element Should Be Visible    //a[@data-item-id="38"]
+    Element Text Should Be    //a[@data-item-id="38"]    Mes alertes
+    Wait Until Element Is Visible    //a[@data-item-id="39"]
+    Element Should Be Visible    //a[@data-item-id="39"]
+    Element Text Should Be    //a[@data-item-id="39"]    Entreprises suivies
+    Wait Until Element Is Visible    //a[@data-item-id="96"]
+    Element Should Be Visible    //a[@data-item-id="96"]
+    Element Text Should Be    //a[@data-item-id="96"]    Infolettre
+
     
     
     

@@ -1,0 +1,13 @@
+*** Settings ***
+Variables    ../Page_objects_Site_emploi/Locators_site_emploi.py
+Library    SeleniumLibrary
+
+*** Keywords ***
+2e étape du processus d’achat
+    Click Element    ${page_Site_emploi_Panier_bouton_Appliquer}
+    Execute JavaScript    window.scrollBy(0,700)
+    Sleep    1
+    Click Element    ${page_Site_emploi_Panier_check_box_Accepter_conditions}
+    Click Element    ${page_Site_emploi_Panier_bouton_Passer_à_la_caisse}
+
+    
