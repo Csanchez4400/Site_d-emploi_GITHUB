@@ -41,5 +41,78 @@ Library    SeleniumLibrary
     Wait Until Element Is Visible    ${page_Site_emploi_Processus_achat_texte_Toutes_transactions_chiffrées}
     Element Should Be Visible    ${page_Site_emploi_Processus_achat_texte_Toutes_transactions_chiffrées}
     Element Text Should Be    ${page_Site_emploi_Processus_achat_texte_Toutes_transactions_chiffrées}    ${text_Toutes_transactions_chiffrées}
+3e étape paiment Paypal
+    [Arguments]    ${username_paypal}    ${password_paypal}
+    Execute JavaScript    window.scrollBy(0,1000)
+    Sleep    1
+    Click Element    ${page_Site_emploi_Processus_achat_bouton_Paypal}
+    Click Element    ${page_Site_emploi_Processus_achat_checkbox_Copie_compte_payable}
+    Click Element    ${page_Site_emploi_Processus_achat_bouton_Reviser}
+    Wait Until Element Is Visible    ${page_Site_emploi_Processus_achat_imgage_Paypal}    
+    Element Should Be Visible    ${page_Site_emploi_Processus_achat_imgage_Paypal}  
+    Sleep    3    
+    Click Element    ${page_Site_emploi_Processus_achat_checkbox_conditions_vie_privee}
+    Execute JavaScript    window.scrollBy(0,200)
+    Sleep    1
+    Click Element    ${page_Site_emploi_Processus_achat_bouton_completer_achat}
+    Sleep    3
+    Wait Until Element Is Visible    ${page_Paypal_img_Paypal}    
+    Element Should Be Visible    ${page_Paypal_img_Paypal}
+    Clear Element Text    ${page_Paypal_username_Paypal}
+    Input Text    ${page_Paypal_username_Paypal}    ${username_paypal}
+    Clear Element Text    ${page_Paypal_password_Paypal}
+    Input Password    ${page_Paypal_password_Paypal}    ${password_paypal}
+    Click Element    ${page_Paypal_bouton_connexion_Paypal}
+    Sleep    3
+    #Click Element    ${page_Paypal_checkbox_Make_this_my_preferred_rate}
+    Click Element    ${page_Paypal_boutton_completer_purchase}
+    Sleep    5
+    Execute JavaScript    window.scrollBy(0,700)
+    Sleep    1
+    Click Element    ${page_Paypal_bouton_retour_merchant_Paypal}
+    Sleep    3
+    Click Element    ${page_Site_emploi_Home_Forfaits}
+    Click Element    ${page_Site_emploi_Home_Mes_forfaits}
+    Sleep    3
+
+3e étape paiment Paypal tous les produits
+    [Arguments]    ${username_paypal}    ${password_paypal}
+    Execute JavaScript    window.scrollBy(0,1000)
+    Sleep    1
+    Click Element    ${page_Site_emploi_Processus_achat_bouton_Paypal}
+    Click Element    ${page_Site_emploi_Processus_achat_checkbox_Copie_compte_payable}
+    Click Element    ${page_Site_emploi_Processus_achat_bouton_Reviser}
+    Wait Until Element Is Visible    ${page_Site_emploi_Processus_achat_imgage_Paypal}    
+    Element Should Be Visible    ${page_Site_emploi_Processus_achat_imgage_Paypal}  
+    Sleep    3 
+    Execute JavaScript    window.scrollBy(0,700)
+    Sleep    1   
+    Click Element    ${page_Site_emploi_Processus_achat_checkbox_conditions_vie_privee}
+    Execute JavaScript    window.scrollBy(0,200)
+    Sleep    1
+    Click Element    ${page_Site_emploi_Processus_achat_bouton_completer_achat}
+    Sleep    3
+    Wait Until Element Is Visible    ${page_Paypal_img_Paypal}    
+    Element Should Be Visible    ${page_Paypal_img_Paypal}
+    Clear Element Text    ${page_Paypal_username_Paypal}
+    Input Text    ${page_Paypal_username_Paypal}    ${username_paypal}
+    Clear Element Text    ${page_Paypal_password_Paypal}
+    Input Password    ${page_Paypal_password_Paypal}    ${password_paypal}
+    Click Element    ${page_Paypal_bouton_connexion_Paypal}
+    Sleep    3
+    #Click Element    ${page_Paypal_checkbox_Make_this_my_preferred_rate}
+    Click Element    ${page_Paypal_boutton_completer_purchase}
+    Sleep    5
+    Execute JavaScript    window.scrollBy(0,700)
+    Sleep    1
+    Click Element    ${page_Paypal_bouton_retour_merchant_Paypal}
+    Sleep    3
+    Click Element    ${page_Site_emploi_Home_Forfaits}
+    Click Element    ${page_Site_emploi_Home_Mes_forfaits}
+    Sleep    3
+
+
+
+    
 
 
