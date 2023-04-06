@@ -46,6 +46,8 @@ page_Site_emploi_Processus_achat_titre_Entreprise='//div[@class="prefix"][text()
 page_Site_emploi_Processus_achat_titre_Adresse='//div[@class="prefix"][text()="Adresse" ]'
 page_Site_emploi_Processus_achat_titre_Mode_paiement='//h5[text()="Mode de paiement"]'
 page_Site_emploi_Processus_achat_texte_Toutes_transactions_chiffrées='//span[@class="is-process"]'
+
+# Paypal option 
 page_Site_emploi_Processus_achat_bouton_Paypal='//input[@id="payment-option-1"]'
 page_Site_emploi_Processus_achat_checkbox_Copie_compte_payable='//input[@id="copy-send"]'
 page_Site_emploi_Processus_achat_bouton_Reviser='//a[@id="btn-reviser"]'
@@ -53,7 +55,7 @@ page_Site_emploi_Processus_achat_imgage_Paypal='//div[@id="paypal"]'
 page_Site_emploi_Processus_achat_checkbox_conditions_vie_privee='//div[@class="checkmark"]'
 page_Site_emploi_Processus_achat_bouton_completer_achat='//button[@id="btn-complete"]'
 
-# Paypal
+# Paypal paiement
 page_Paypal_img_Paypal='//p[@class="paypal-logo paypal-logo-long"]'
 page_Paypal_username_Paypal='//input[@id="email"]'
 page_Paypal_password_Paypal='//input[@id="password"]'
@@ -61,6 +63,18 @@ page_Paypal_bouton_connexion_Paypal='//button[@id="btnLogin"]'
 page_Paypal_checkbox_Make_this_my_preferred_rate='CC-4GJCCSD6F3QNU-make-preferred'
 page_Paypal_boutton_completer_purchase='//button[@id="payment-submit-btn"]'
 page_Paypal_bouton_retour_merchant_Paypal='//button[@class="donepage-return-to-merchant-button css-2vilsm-button-button-Button-css-buttonStyles-buttonStyles"]'
+
+# Carte credit
+page_Site_emploi_Processus_achat_bouton_carte_credit='//input[@id="payment-option-2"]'
+page_Site_emploi_Processus_achat_input_numero_carte='//input[@id="cc_number"]'
+page_Site_emploi_Processus_achat_input_prenom='//input[@id="cc_first_name"]'
+page_Site_emploi_Processus_achat_input_nom='//input[@id="cc_last_name"]'
+page_Site_emploi_Processus_achat_input_date_expiration_MM='//input[@id="cc_expiration_date_month"]'
+page_Site_emploi_Processus_achat_input_date_expiration_AA='//input[@id="cc_expiration_date_year"]'
+page_Site_emploi_Processus_achat_input_code_securite='//input[@id="cc_verification_value"]'
+page_Site_emploi_Processus_achat_input_code_postal='cc_postal_code'
+page_Site_emploi_Processus_achat_bouton_completer_achat_V2='//button[@type="submit"]'
+
 
 
 

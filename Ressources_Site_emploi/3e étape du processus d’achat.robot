@@ -2,6 +2,7 @@
 Variables    ../Page_objects_Site_emploi/Locators_site_emploi.py
 Library    SeleniumLibrary
 
+
 *** Keywords ***
 3e étape du processus d’achat
     [Arguments]    ${text_Processus_achat}    ${text_Info_facturation}    ${text_Info_personnelles}    ${text_Prenom}    ${text_Nom}    ${text_Poste_entreprise}    ${text_Groupe}    ${text_Info_entreprise}    ${text_titre_Entreprise}    ${text_titre_Adresse}    ${text_Mode_paiement}    ${text_Toutes_transactions_chiffrées}
@@ -110,6 +111,64 @@ Library    SeleniumLibrary
     Click Element    ${page_Site_emploi_Home_Forfaits}
     Click Element    ${page_Site_emploi_Home_Mes_forfaits}
     Sleep    3
+3e étape paiment Carte de credit
+    [Arguments]    ${numerocarte_cartecredit}    ${prenom_cartecredit}    ${nom_cartecredit}    ${dateexpirationMM_cartecredit}    ${dateexpirationAA_cartecredit}    ${codesecurite_cartecredit}    ${codepostal_cartecredit}
+    Execute JavaScript    window.scrollBy(0,1000)
+    Sleep    1
+    Click Element    ${page_Site_emploi_Processus_achat_bouton_carte_credit}
+    Input Text    ${page_Site_emploi_Processus_achat_input_numero_carte}    ${numerocarte_cartecredit}
+    Input Text    ${page_Site_emploi_Processus_achat_input_prenom}    ${prenom_cartecredit} 
+    Input Text    ${page_Site_emploi_Processus_achat_input_nom}    ${nom_cartecredit}
+    Input Text    ${page_Site_emploi_Processus_achat_input_date_expiration_MM}    ${dateexpirationMM_cartecredit}
+    Input Text    ${page_Site_emploi_Processus_achat_input_date_expiration_AA}    ${dateexpirationAA_cartecredit}
+    Input Text    ${page_Site_emploi_Processus_achat_input_code_securite}    ${codesecurite_cartecredit}
+    Input Text    ${page_Site_emploi_Processus_achat_input_code_postal}    ${codepostal_cartecredit}
+    Sleep    1 
+    Execute JavaScript    window.scrollBy(0,300)
+    Sleep    1 
+    Click Element    ${page_Site_emploi_Processus_achat_checkbox_Copie_compte_payable}
+    Click Element    ${page_Site_emploi_Processus_achat_bouton_Reviser}
+    Sleep    1 
+    #Execute JavaScript    window.scrollBy(0,400)
+    #Sleep    1   
+    Click Element    ${page_Site_emploi_Processus_achat_checkbox_conditions_vie_privee}
+    Sleep    2
+    Execute JavaScript    window.scrollBy(0,200)
+    Sleep    2
+    Wait Until Element Is Enabled    ${page_Site_emploi_Processus_achat_bouton_completer_achat_V2}
+    Click Button    ${page_Site_emploi_Processus_achat_bouton_completer_achat_V2}
+    Sleep    2
+3e étape paiment carte de credit tous les produits
+    [Arguments]    ${numerocarte_cartecredit}    ${prenom_cartecredit}    ${nom_cartecredit}    ${dateexpirationMM_cartecredit}    ${dateexpirationAA_cartecredit}    ${codesecurite_cartecredit}    ${codepostal_cartecredit}
+    Execute JavaScript    window.scrollBy(0,1000)
+    Sleep    1
+    Click Element    ${page_Site_emploi_Processus_achat_bouton_carte_credit}
+    Input Text    ${page_Site_emploi_Processus_achat_input_numero_carte}    ${numerocarte_cartecredit}
+    Input Text    ${page_Site_emploi_Processus_achat_input_prenom}    ${prenom_cartecredit} 
+    Input Text    ${page_Site_emploi_Processus_achat_input_nom}    ${nom_cartecredit}
+    Input Text    ${page_Site_emploi_Processus_achat_input_date_expiration_MM}    ${dateexpirationMM_cartecredit}
+    Input Text    ${page_Site_emploi_Processus_achat_input_date_expiration_AA}    ${dateexpirationAA_cartecredit}
+    Input Text    ${page_Site_emploi_Processus_achat_input_code_securite}    ${codesecurite_cartecredit}
+    Input Text    ${page_Site_emploi_Processus_achat_input_code_postal}    ${codepostal_cartecredit}
+    Sleep    1 
+    Execute JavaScript    window.scrollBy(0,300)
+    Sleep    1 
+    Click Element    ${page_Site_emploi_Processus_achat_checkbox_Copie_compte_payable}
+    Click Element    ${page_Site_emploi_Processus_achat_bouton_Reviser}
+    Sleep    1 
+    Execute JavaScript    window.scrollBy(0,400)
+    Sleep    1   
+    Click Element    ${page_Site_emploi_Processus_achat_checkbox_conditions_vie_privee}
+    Sleep    2
+    Execute JavaScript    window.scrollBy(0,200)
+    Sleep    2
+    Wait Until Element Is Enabled    ${page_Site_emploi_Processus_achat_bouton_completer_achat_V2}
+    Click Button    ${page_Site_emploi_Processus_achat_bouton_completer_achat_V2}
+    Sleep    2
+
+    
+
+
 
 
 

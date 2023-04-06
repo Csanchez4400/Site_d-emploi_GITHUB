@@ -4,6 +4,7 @@ Resource    ../Ressources_Site_emploi/1er étape du processus d’achat.robot
 Resource    ../Ressources_Site_emploi/2e étape du processus d’achat.robot
 Resource    ../Ressources_Site_emploi/3e étape du processus d’achat.robot
 
+
 *** Variables ***
 ${URL_Page}    https://entreprises-int.oiq.qc.ca/OIQ/EntrepriseConnexion/ConnexionSiteEmploiUAT.aspx?client_id=TestSiteEmploiUAT&redirect_uri=https:%2F%2Foiqemploilaravel-uat.logientlab.com%2Fapi%2Fsocial_login_process%3Fprovider%3Dimis&scope=&response_type=code&state=TbbAijdw3wbfPN7WRUM9mCZ4Xua3N2e6OnpDszkp
 ${Navigateur}    chrome

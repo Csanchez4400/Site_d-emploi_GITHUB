@@ -37,9 +37,11 @@ Library    SeleniumLibrary
     Sleep    3
     Click Element    ${page_Site_emploi_Acheter_un_forfait_popup_bouton_Continuer_magasinage}
     Sleep    3
-    Execute JavaScript    window.scrollBy(0,500)
+    Execute JavaScript    window.scrollBy(0,200)
     Sleep    3
     Click Element    ${page_Site_emploi_Acheter_un_forfait_bouton_Ajouter_au_panier_Offre_vedette}
+    Sleep    3
+    Execute JavaScript    window.scrollBy(0,50)
     Sleep    3
     Click Element    ${page_Site_emploi_Acheter_un_forfait_popup_bouton_Continuer_magasinage}
     Sleep    3

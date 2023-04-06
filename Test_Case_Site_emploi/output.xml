@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.2 on win32)" generated="20230405 18:14:10.961" rpa="false" schemaversion="3">
+<suite id="s1" name="Test Data Driver" source="c:\Users\Owner\Desktop\Robot_framework\PJ04_Site_emploi_OIQ\Test_Case_Site_emploi\test_data_driver.robot">
+<test id="s1-t1" name="tc01" line="8">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>http://www.uninstallhelps.com/how-to-uninstall-robot-framework-2-1-3.html</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230405 18:14:11.412" level="INFO">Opening browser 'chrome' to base url 'http://www.uninstallhelps.com/how-to-uninstall-robot-framework-2-1-3.html'.</msg>
+<status status="PASS" starttime="20230405 18:14:11.411" endtime="20230405 18:14:15.585"/>
+</kw>
+<status status="PASS" starttime="20230405 18:14:11.410" endtime="20230405 18:14:15.588"/>
+</test>
+<status status="PASS" starttime="20230405 18:14:10.971" endtime="20230405 18:14:15.591"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test Data Driver">Test Data Driver</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20230405 18:14:11.401" level="ERROR">Error in file 'c:\Users\Owner\Desktop\Robot_framework\PJ04_Site_emploi_OIQ\Test_Case_Site_emploi\test_data_driver.robot' on line 4: Importing library 'DataDriver' failed: ModuleNotFoundError: No module named 'DataDriver'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  c:\Users\Owner\.vscode\extensions\robocorp.robotframework-lsp-1.9.0\src\robotframework_debug_adapter
+  C:\Users\Owner\Desktop\Robot_framework\PJ04_Site_emploi_OIQ\Test_Case_Site_emploi
+  c:\Users\Owner\.vscode\extensions\robocorp.robotframework-lsp-1.9.0\src
+  c:\Users\Owner\.vscode\extensions\robocorp.robotframework-lsp-1.9.0\src\robotframework_ls\vendored
+  C:\Users\Owner\AppData\Local\Programs\Python\Python311\python311.zip
+  C:\Users\Owner\AppData\Local\Programs\Python\Python311\DLLs
+  C:\Users\Owner\AppData\Local\Programs\Python\Python311\Lib
+  C:\Users\Owner\AppData\Local\Programs\Python\Python311
+  C:\Users\Owner\AppData\Local\Programs\Python\Python311\Lib\site-packages</msg>
+</errors>
+</robot>
