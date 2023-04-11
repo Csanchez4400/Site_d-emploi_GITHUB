@@ -1,5 +1,5 @@
 *** Settings ***
-Variables    ../Page_objects_Site_emploi/Locators_site_emploi.py
+Variables    ../Page_objects/Locators_site_emploi.py
 Library    SeleniumLibrary
 
 *** Keywords ***

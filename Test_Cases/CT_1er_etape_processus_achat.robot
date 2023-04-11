@@ -1,6 +1,6 @@
 *** Settings ***
-Resource    ../Ressources_Site_emploi/Employeur_Connexion_Site_emploi.robot
-Resource    ../Ressources_Site_emploi/1er étape du processus d’achat.robot
+Resource    ../Keywords/Employeur_Connexion_Site_emploi.robot
+Resource    ../Keywords/1er étape du processus d’achat.robot
 
 
 *** Variables ***
@@ -11,5 +11,5 @@ ${text_password_Employeur}    oiq1234
 
 *** Test Cases ***
 CT_1er étape sélectionner tous les boutons Ajouter au panier
-    En tant que responsable principal.e / Administrateur Client, je me connecte au site d'emploi    ${URL_Page}    ${Navigateur}    ${text_username_Employeur}    ${text_password_Employeur}
+    En tant qu'employeur /Admin.client / Recruteur / Finances/, je me connecte au site d'emploi    ${URL_Page}    ${Navigateur}    ${text_username_Employeur}    ${text_password_Employeur}
     1er étape sélectionner tous les boutons Ajouter au panier

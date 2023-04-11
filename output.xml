@@ -1,363 +1,713 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.11.2 on win32)" generated="20230404 15:44:40.717" rpa="false" schemaversion="3">
-<suite id="s1" name="CT 3e etape processus achat Paypal" source="c:\Users\Owner\Desktop\Robot_framework\PJ04_Site_emploi_OIQ\Test_Case_Site_emploi\CT_3e_etape_processus_achat_Paypal.robot">
-<test id="s1-t1" name="CT_3e_etape_processus_achat_paiment_Paypal_Forfait 20" line="48">
-<kw name="En tant que responsable principal.e / Administrateur Client, je me connecte au site d'emploi" library="Employeur_Connexion_Site_emploi">
+<robot generator="Robot 6.0.2 (Python 3.11.3 on win32)" generated="20230411 11:47:12.644" rpa="false" schemaversion="3">
+<suite id="s1" name="CT DataD Login" source="c:\Users\Owner\Desktop\Robot_framework\PJ04_Site_emploi_OIQ\Test_Cases\CT_DataD_Login.robot">
+<test id="s1-t1" name="Verifier login et logout" line="18">
+<kw name="Ouvrir cas de test" library="KW_common_login_logout" type="SETUP">
 <arg>${URL_Page}</arg>
 <arg>${Navigateur}</arg>
-<arg>${text_username_Employeur}</arg>
-<arg>${text_password_Employeur}</arg>
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${URL_Page}</arg>
 <arg>${Navigateur}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230404 15:44:40.941" level="INFO">Opening browser 'chrome' to base url 'https://entreprises-int.oiq.qc.ca/OIQ/EntrepriseConnexion/ConnexionSiteEmploiUAT.aspx?client_id=TestSiteEmploiUAT&amp;redirect_uri=https:%2F%2Foiqemploilaravel-uat.logientlab.com%2Fapi%2Fsocial_login_process%3Fprovider%3Dimis&amp;scope=&amp;response_type=code&amp;state=TbbAijdw3wbfPN7WRUM9mCZ4Xua3N2e6OnpDszkp'.</msg>
-<status status="PASS" starttime="20230404 15:44:40.940" endtime="20230404 15:44:44.503"/>
+<msg timestamp="20230411 11:47:14.328" level="INFO">Opening browser 'chrome' to base url 'https://entreprises-int.oiq.qc.ca/OIQ/EntrepriseConnexion/ConnexionSiteEmploiUAT.aspx?client_id=TestSiteEmploiUAT&amp;redirect_uri=https:%2F%2Foiqemploilaravel-uat.logientlab.com%2Fapi%2Fsocial_login_process%3Fprovider%3Dimis&amp;scope=&amp;response_type=code&amp;state=TbbAijdw3wbfPN7WRUM9mCZ4Xua3N2e6OnpDszkp'.</msg>
+<status status="PASS" starttime="20230411 11:47:14.326" endtime="20230411 11:47:17.953"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230404 15:44:44.504" endtime="20230404 15:44:44.635"/>
+<status status="PASS" starttime="20230411 11:47:17.954" endtime="20230411 11:47:18.114"/>
 </kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230411 11:47:20.116" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230411 11:47:18.115" endtime="20230411 11:47:20.116"/>
+</kw>
+<status status="PASS" starttime="20230411 11:47:14.325" endtime="20230411 11:47:20.117"/>
+</kw>
+<kw name=" Login et Logout">
+<arg>yannick@diageo.ca</arg>
+<arg>oiq1234</arg>
 <kw name="Clear Element Text" library="SeleniumLibrary">
 <arg>${page_de_connexion_username_Employeur}</arg>
 <doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" starttime="20230404 15:44:44.636" endtime="20230404 15:44:44.717"/>
+<status status="PASS" starttime="20230411 11:47:20.121" endtime="20230411 11:47:20.213"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${page_de_connexion_username_Employeur}</arg>
 <arg>${text_username_Employeur}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230404 15:44:44.718" level="INFO">Typing text 'alfred@diageo.ca' into text field '//*[@id='ctl01_TemplateBody_WebPartManager1_gwpciModuleconnexion_ciModuleconnexion_signInUserName']'.</msg>
-<status status="PASS" starttime="20230404 15:44:44.717" endtime="20230404 15:44:44.822"/>
+<msg timestamp="20230411 11:47:20.218" level="INFO">Typing text 'yannick@diageo.ca' into text field '//*[@id='ctl01_TemplateBody_WebPartManager1_gwpciModuleconnexion_ciModuleconnexion_signInUserName']'.</msg>
+<status status="PASS" starttime="20230411 11:47:20.214" endtime="20230411 11:47:20.413"/>
 </kw>
 <kw name="Clear Element Text" library="SeleniumLibrary">
 <arg>${page_de_connexion_password_Employeur}</arg>
 <doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" starttime="20230404 15:44:44.822" endtime="20230404 15:44:44.868"/>
+<status status="PASS" starttime="20230411 11:47:20.414" endtime="20230411 11:47:20.498"/>
 </kw>
 <kw name="Input Password" library="SeleniumLibrary">
 <arg>${page_de_connexion_password_Employeur}</arg>
 <arg>${text_password_Employeur}</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20230404 15:44:44.869" level="INFO">Typing password into text field '//input[@name='ctl01$TemplateBody$WebPartManager1$gwpciModuleconnexion$ciModuleconnexion$signInPassword']'.</msg>
-<msg timestamp="20230404 15:44:44.900" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20230404 15:44:44.958" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20230404 15:44:44.869" endtime="20230404 15:44:44.958"/>
+<msg timestamp="20230411 11:47:20.501" level="INFO">Typing password into text field '//input[@name='ctl01$TemplateBody$WebPartManager1$gwpciModuleconnexion$ciModuleconnexion$signInPassword']'.</msg>
+<msg timestamp="20230411 11:47:20.560" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20230411 11:47:20.683" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20230411 11:47:20.498" endtime="20230411 11:47:20.684"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${page_de_connexion_bouton_connexion_Employeur}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230404 15:44:44.959" level="INFO">Clicking element '//*[@id='ctl01_TemplateBody_WebPartManager1_gwpciModuleconnexion_ciModuleconnexion_SubmitButton']'.</msg>
-<status status="PASS" starttime="20230404 15:44:44.958" endtime="20230404 15:44:45.025"/>
+<msg timestamp="20230411 11:47:20.686" level="INFO">Clicking element '//*[@id='ctl01_TemplateBody_WebPartManager1_gwpciModuleconnexion_ciModuleconnexion_SubmitButton']'.</msg>
+<status status="PASS" starttime="20230411 11:47:20.684" endtime="20230411 11:47:20.798"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>3</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230404 15:44:48.026" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20230404 15:44:45.026" endtime="20230404 15:44:48.028"/>
+<msg timestamp="20230411 11:47:23.800" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230411 11:47:20.799" endtime="20230411 11:47:23.800"/>
 </kw>
-<status status="PASS" starttime="20230404 15:44:40.939" endtime="20230404 15:44:48.029"/>
-</kw>
-<kw name="1er étape du processus d’achat Forfait 20" library="1er étape du processus d’achat">
-<kw name="Execute Javascript" library="SeleniumLibrary">
-<arg>window.scrollBy(0,300)</arg>
-<doc>Executes the given JavaScript code with possible arguments.</doc>
-<msg timestamp="20230404 15:44:48.037" level="INFO">Executing JavaScript:
-window.scrollBy(0,300)
-Without any arguments.</msg>
-<status status="PASS" starttime="20230404 15:44:48.034" endtime="20230404 15:44:58.080"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
 <arg>${page_Site_emploi_Home_Forfaits}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230404 15:44:58.082" level="INFO">Clicking element '//a[@data-item-id='37']'.</msg>
-<status status="PASS" starttime="20230404 15:44:58.081" endtime="20230404 15:44:58.180"/>
-</kw>
-<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
-<arg>10</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20230404 15:44:58.180" endtime="20230404 15:44:58.184"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${page_Site_emploi_Home_Acheter_un_forfait}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230404 15:44:58.186" level="INFO">Clicking element '//a[@data-item-id='90']'.</msg>
-<status status="PASS" starttime="20230404 15:44:58.184" endtime="20230404 15:45:02.055"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230404 15:45:03.056" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20230404 15:45:02.055" endtime="20230404 15:45:03.057"/>
-</kw>
-<kw name="Execute Javascript" library="SeleniumLibrary">
-<arg>window.scrollBy(0,300)</arg>
-<doc>Executes the given JavaScript code with possible arguments.</doc>
-<msg timestamp="20230404 15:45:03.059" level="INFO">Executing JavaScript:
-window.scrollBy(0,300)
-Without any arguments.</msg>
-<status status="PASS" starttime="20230404 15:45:03.057" endtime="20230404 15:45:03.068"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230404 15:45:04.071" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20230404 15:45:03.069" endtime="20230404 15:45:04.071"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${page_Site_emploi_Acheter_un_forfait_bouton_Ajouter_au_panier_Forfait_20_membre}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230404 15:45:04.073" level="INFO">Clicking element '//a[@class="btn-arrow" and @onclick="mw.cart.add('.forfait.item-35');"]'.</msg>
-<status status="PASS" starttime="20230404 15:45:04.072" endtime="20230404 15:45:04.175"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${page_Site_emploi_Acheter_un_forfait_popup_bouton_Passer_à_la_caisse}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230404 15:45:04.177" level="INFO">Clicking element '//a[@class="mw-checkout-modal-buttons btn btn-primary float-end ms-2"]'.</msg>
-<status status="PASS" starttime="20230404 15:45:04.175" endtime="20230404 15:45:08.804"/>
-</kw>
-<status status="PASS" starttime="20230404 15:44:48.032" endtime="20230404 15:45:08.805"/>
-</kw>
-<kw name="2e étape du processus d’achat" library="2e étape du processus d’achat">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${page_Site_emploi_Panier_bouton_Appliquer}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230404 15:45:08.809" level="INFO">Clicking element '//button[@id="promo-cart"]'.</msg>
-<status status="PASS" starttime="20230404 15:45:08.808" endtime="20230404 15:45:08.909"/>
-</kw>
-<kw name="Execute Javascript" library="SeleniumLibrary">
-<arg>window.scrollBy(0,700)</arg>
-<doc>Executes the given JavaScript code with possible arguments.</doc>
-<msg timestamp="20230404 15:45:08.911" level="INFO">Executing JavaScript:
-window.scrollBy(0,700)
-Without any arguments.</msg>
-<status status="PASS" starttime="20230404 15:45:08.910" endtime="20230404 15:45:08.937"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230404 15:45:09.939" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20230404 15:45:08.938" endtime="20230404 15:45:09.939"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${page_Site_emploi_Panier_check_box_Accepter_conditions}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230404 15:45:09.940" level="INFO">Clicking element '//input[@type="checkbox"]'.</msg>
-<status status="PASS" starttime="20230404 15:45:09.939" endtime="20230404 15:45:10.031"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${page_Site_emploi_Panier_bouton_Passer_à_la_caisse}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230404 15:45:10.033" level="INFO">Clicking element '//a[@id="pre-submit"]'.</msg>
-<status status="PASS" starttime="20230404 15:45:10.032" endtime="20230404 15:45:11.341"/>
-</kw>
-<status status="PASS" starttime="20230404 15:45:08.806" endtime="20230404 15:45:11.342"/>
-</kw>
-<kw name="3e étape paiment Paypal" library="3e étape du processus d’achat">
-<arg>${username_paypal}</arg>
-<arg>${password_paypal}</arg>
-<kw name="Execute Javascript" library="SeleniumLibrary">
-<arg>window.scrollBy(0,1000)</arg>
-<doc>Executes the given JavaScript code with possible arguments.</doc>
-<msg timestamp="20230404 15:45:11.345" level="INFO">Executing JavaScript:
-window.scrollBy(0,1000)
-Without any arguments.</msg>
-<status status="PASS" starttime="20230404 15:45:11.344" endtime="20230404 15:45:11.358"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230404 15:45:12.360" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20230404 15:45:11.358" endtime="20230404 15:45:12.360"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${page_Site_emploi_Processus_achat_bouton_Paypal}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230404 15:45:12.361" level="INFO">Clicking element '//input[@id="payment-option-1"]'.</msg>
-<status status="PASS" starttime="20230404 15:45:12.360" endtime="20230404 15:45:12.459"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${page_Site_emploi_Processus_achat_checkbox_Copie_compte_payable}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230404 15:45:12.461" level="INFO">Clicking element '//input[@id="copy-send"]'.</msg>
-<status status="PASS" starttime="20230404 15:45:12.460" endtime="20230404 15:45:12.550"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${page_Site_emploi_Processus_achat_bouton_Reviser}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230404 15:45:12.552" level="INFO">Clicking element '//a[@id="btn-reviser"]'.</msg>
-<status status="PASS" starttime="20230404 15:45:12.551" endtime="20230404 15:45:12.651"/>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${page_Site_emploi_Processus_achat_imgage_Paypal}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230404 15:45:12.652" endtime="20230404 15:45:12.696"/>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20230411 11:47:23.801" endtime="20230411 11:47:36.993"/>
 </kw>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
-<arg>${page_Site_emploi_Processus_achat_imgage_Paypal}</arg>
+<arg>${page_Site_emploi_Home_Forfaits}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<msg timestamp="20230404 15:45:12.733" level="INFO">Element '//div[@id="paypal"]' is displayed.</msg>
-<status status="PASS" starttime="20230404 15:45:12.696" endtime="20230404 15:45:12.734"/>
+<msg timestamp="20230411 11:47:37.029" level="INFO">Element '//a[@data-item-id='37']' is displayed.</msg>
+<status status="PASS" starttime="20230411 11:47:36.993" endtime="20230411 11:47:37.030"/>
+</kw>
+<status status="PASS" starttime="20230411 11:47:20.119" endtime="20230411 11:47:37.030"/>
+</kw>
+<kw name="Fermer cas de test" library="KW_common_login_logout" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230411 11:47:37.032" endtime="20230411 11:47:39.406"/>
+</kw>
+<status status="PASS" starttime="20230411 11:47:37.031" endtime="20230411 11:47:39.407"/>
+</kw>
+<status status="PASS" starttime="20230411 11:47:14.321" endtime="20230411 11:47:39.408"/>
+</test>
+<test id="s1-t2" name="Verifier login et logout" line="18">
+<kw name="Ouvrir cas de test" library="KW_common_login_logout" type="SETUP">
+<arg>${URL_Page}</arg>
+<arg>${Navigateur}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL_Page}</arg>
+<arg>${Navigateur}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230411 11:47:39.428" level="INFO">Opening browser 'chrome' to base url 'https://entreprises-int.oiq.qc.ca/OIQ/EntrepriseConnexion/ConnexionSiteEmploiUAT.aspx?client_id=TestSiteEmploiUAT&amp;redirect_uri=https:%2F%2Foiqemploilaravel-uat.logientlab.com%2Fapi%2Fsocial_login_process%3Fprovider%3Dimis&amp;scope=&amp;response_type=code&amp;state=TbbAijdw3wbfPN7WRUM9mCZ4Xua3N2e6OnpDszkp'.</msg>
+<status status="PASS" starttime="20230411 11:47:39.426" endtime="20230411 11:47:44.358"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230411 11:47:44.359" endtime="20230411 11:47:44.497"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
-<arg>3</arg>
+<arg>2</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230404 15:45:15.734" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20230404 15:45:12.734" endtime="20230404 15:45:15.734"/>
+<msg timestamp="20230411 11:47:46.498" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230411 11:47:44.498" endtime="20230411 11:47:46.499"/>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${page_Site_emploi_Processus_achat_checkbox_conditions_vie_privee}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230404 15:45:15.736" level="INFO">Clicking element '//div[@class="checkmark"]'.</msg>
-<status status="PASS" starttime="20230404 15:45:15.736" endtime="20230404 15:45:15.829"/>
+<status status="PASS" starttime="20230411 11:47:39.424" endtime="20230411 11:47:46.499"/>
 </kw>
-<kw name="Execute Javascript" library="SeleniumLibrary">
-<arg>window.scrollBy(0,200)</arg>
-<doc>Executes the given JavaScript code with possible arguments.</doc>
-<msg timestamp="20230404 15:45:15.832" level="INFO">Executing JavaScript:
-window.scrollBy(0,200)
-Without any arguments.</msg>
-<status status="PASS" starttime="20230404 15:45:15.830" endtime="20230404 15:45:15.840"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230404 15:45:16.842" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20230404 15:45:15.842" endtime="20230404 15:45:16.842"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${page_Site_emploi_Processus_achat_bouton_completer_achat}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230404 15:45:16.844" level="INFO">Clicking element '//button[@id="btn-complete"]'.</msg>
-<status status="PASS" starttime="20230404 15:45:16.843" endtime="20230404 15:45:23.594"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230404 15:45:26.596" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20230404 15:45:23.595" endtime="20230404 15:45:26.596"/>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${page_Paypal_img_Paypal}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230404 15:45:26.597" endtime="20230404 15:45:26.670"/>
-</kw>
-<kw name="Element Should Be Visible" library="SeleniumLibrary">
-<arg>${page_Paypal_img_Paypal}</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<msg timestamp="20230404 15:45:26.705" level="INFO">Element '//p[@class="paypal-logo paypal-logo-long"]' is displayed.</msg>
-<status status="PASS" starttime="20230404 15:45:26.671" endtime="20230404 15:45:26.706"/>
-</kw>
+<kw name=" Login et Logout">
+<arg>annesophie@diageo.ca</arg>
+<arg>oiq1234</arg>
 <kw name="Clear Element Text" library="SeleniumLibrary">
-<arg>${page_Paypal_username_Paypal}</arg>
+<arg>${page_de_connexion_username_Employeur}</arg>
 <doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" starttime="20230404 15:45:26.707" endtime="20230404 15:45:26.799"/>
+<status status="PASS" starttime="20230411 11:47:46.502" endtime="20230411 11:47:46.581"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
-<arg>${page_Paypal_username_Paypal}</arg>
-<arg>${username_paypal}</arg>
+<arg>${page_de_connexion_username_Employeur}</arg>
+<arg>${text_username_Employeur}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230404 15:45:26.801" level="INFO">Typing text 'sb-fcff725285289@personal.example.com' into text field '//input[@id="email"]'.</msg>
-<status status="PASS" starttime="20230404 15:45:26.800" endtime="20230404 15:45:27.057"/>
+<msg timestamp="20230411 11:47:46.582" level="INFO">Typing text 'annesophie@diageo.ca' into text field '//*[@id='ctl01_TemplateBody_WebPartManager1_gwpciModuleconnexion_ciModuleconnexion_signInUserName']'.</msg>
+<status status="PASS" starttime="20230411 11:47:46.581" endtime="20230411 11:47:46.771"/>
 </kw>
 <kw name="Clear Element Text" library="SeleniumLibrary">
-<arg>${page_Paypal_password_Paypal}</arg>
+<arg>${page_de_connexion_password_Employeur}</arg>
 <doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" starttime="20230404 15:45:27.059" endtime="20230404 15:45:27.137"/>
+<status status="PASS" starttime="20230411 11:47:46.772" endtime="20230411 11:47:46.856"/>
 </kw>
 <kw name="Input Password" library="SeleniumLibrary">
-<arg>${page_Paypal_password_Paypal}</arg>
-<arg>${password_paypal}</arg>
+<arg>${page_de_connexion_password_Employeur}</arg>
+<arg>${text_password_Employeur}</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20230404 15:45:27.140" level="INFO">Typing password into text field '//input[@id="password"]'.</msg>
-<msg timestamp="20230404 15:45:27.182" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20230404 15:45:27.301" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20230404 15:45:27.138" endtime="20230404 15:45:27.302"/>
+<msg timestamp="20230411 11:47:46.859" level="INFO">Typing password into text field '//input[@name='ctl01$TemplateBody$WebPartManager1$gwpciModuleconnexion$ciModuleconnexion$signInPassword']'.</msg>
+<msg timestamp="20230411 11:47:46.907" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20230411 11:47:47.010" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20230411 11:47:46.856" endtime="20230411 11:47:47.011"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>${page_Paypal_bouton_connexion_Paypal}</arg>
+<arg>${page_de_connexion_bouton_connexion_Employeur}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230404 15:45:27.304" level="INFO">Clicking element '//button[@id="btnLogin"]'.</msg>
-<status status="PASS" starttime="20230404 15:45:27.302" endtime="20230404 15:45:32.048"/>
+<msg timestamp="20230411 11:47:47.012" level="INFO">Clicking element '//*[@id='ctl01_TemplateBody_WebPartManager1_gwpciModuleconnexion_ciModuleconnexion_SubmitButton']'.</msg>
+<status status="PASS" starttime="20230411 11:47:47.011" endtime="20230411 11:47:47.129"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>3</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230404 15:45:35.050" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20230404 15:45:32.049" endtime="20230404 15:45:35.051"/>
+<msg timestamp="20230411 11:47:50.131" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230411 11:47:47.130" endtime="20230411 11:47:50.131"/>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${page_Paypal_boutton_completer_purchase}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230404 15:45:35.054" level="INFO">Clicking element '//button[@id="payment-submit-btn"]'.</msg>
-<status status="PASS" starttime="20230404 15:45:35.052" endtime="20230404 15:45:35.202"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>5</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230404 15:45:40.204" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20230404 15:45:35.203" endtime="20230404 15:45:40.204"/>
-</kw>
-<kw name="Execute Javascript" library="SeleniumLibrary">
-<arg>window.scrollBy(0,700)</arg>
-<doc>Executes the given JavaScript code with possible arguments.</doc>
-<msg timestamp="20230404 15:45:40.208" level="INFO">Executing JavaScript:
-window.scrollBy(0,700)
-Without any arguments.</msg>
-<status status="PASS" starttime="20230404 15:45:40.205" endtime="20230404 15:45:40.224"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230404 15:45:41.226" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20230404 15:45:40.225" endtime="20230404 15:45:41.227"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${page_Paypal_bouton_retour_merchant_Paypal}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230404 15:45:41.230" level="INFO">Clicking element '//button[@class="donepage-return-to-merchant-button css-2vilsm-button-button-Button-css-buttonStyles-buttonStyles"]'.</msg>
-<status status="PASS" starttime="20230404 15:45:41.228" endtime="20230404 15:45:41.354"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230404 15:45:44.355" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20230404 15:45:41.354" endtime="20230404 15:45:44.355"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
 <arg>${page_Site_emploi_Home_Forfaits}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230404 15:45:44.358" level="INFO">Clicking element '//a[@data-item-id='37']'.</msg>
-<status status="PASS" starttime="20230404 15:45:44.357" endtime="20230404 15:45:45.810"/>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20230411 11:47:50.131" endtime="20230411 11:48:01.417"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Home_Forfaits}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230411 11:48:01.454" level="INFO">Element '//a[@data-item-id='37']' is displayed.</msg>
+<status status="PASS" starttime="20230411 11:48:01.417" endtime="20230411 11:48:01.455"/>
+</kw>
+<status status="PASS" starttime="20230411 11:47:46.500" endtime="20230411 11:48:01.455"/>
+</kw>
+<kw name="Fermer cas de test" library="KW_common_login_logout" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230411 11:48:01.458" endtime="20230411 11:48:03.743"/>
+</kw>
+<status status="PASS" starttime="20230411 11:48:01.457" endtime="20230411 11:48:03.745"/>
+</kw>
+<status status="PASS" starttime="20230411 11:47:39.415" endtime="20230411 11:48:03.746"/>
+</test>
+<test id="s1-t3" name="Verifier login et logout" line="18">
+<kw name="Ouvrir cas de test" library="KW_common_login_logout" type="SETUP">
+<arg>${URL_Page}</arg>
+<arg>${Navigateur}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL_Page}</arg>
+<arg>${Navigateur}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230411 11:48:03.766" level="INFO">Opening browser 'chrome' to base url 'https://entreprises-int.oiq.qc.ca/OIQ/EntrepriseConnexion/ConnexionSiteEmploiUAT.aspx?client_id=TestSiteEmploiUAT&amp;redirect_uri=https:%2F%2Foiqemploilaravel-uat.logientlab.com%2Fapi%2Fsocial_login_process%3Fprovider%3Dimis&amp;scope=&amp;response_type=code&amp;state=TbbAijdw3wbfPN7WRUM9mCZ4Xua3N2e6OnpDszkp'.</msg>
+<status status="PASS" starttime="20230411 11:48:03.764" endtime="20230411 11:48:07.310"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230411 11:48:07.311" endtime="20230411 11:48:07.443"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230411 11:48:09.445" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230411 11:48:07.444" endtime="20230411 11:48:09.446"/>
+</kw>
+<status status="PASS" starttime="20230411 11:48:03.762" endtime="20230411 11:48:09.447"/>
+</kw>
+<kw name=" Login et Logout">
+<arg>coralie@diageo.ca</arg>
+<arg>oiq1234</arg>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${page_de_connexion_username_Employeur}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20230411 11:48:09.449" endtime="20230411 11:48:09.543"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${page_de_connexion_username_Employeur}</arg>
+<arg>${text_username_Employeur}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230411 11:48:09.545" level="INFO">Typing text 'coralie@diageo.ca' into text field '//*[@id='ctl01_TemplateBody_WebPartManager1_gwpciModuleconnexion_ciModuleconnexion_signInUserName']'.</msg>
+<status status="PASS" starttime="20230411 11:48:09.544" endtime="20230411 11:48:09.735"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${page_de_connexion_password_Employeur}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20230411 11:48:09.736" endtime="20230411 11:48:09.820"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${page_de_connexion_password_Employeur}</arg>
+<arg>${text_password_Employeur}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20230411 11:48:09.822" level="INFO">Typing password into text field '//input[@name='ctl01$TemplateBody$WebPartManager1$gwpciModuleconnexion$ciModuleconnexion$signInPassword']'.</msg>
+<msg timestamp="20230411 11:48:09.869" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20230411 11:48:09.970" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20230411 11:48:09.821" endtime="20230411 11:48:09.970"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>${page_Site_emploi_Home_Mes_forfaits}</arg>
+<arg>${page_de_connexion_bouton_connexion_Employeur}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230404 15:45:45.813" level="INFO">Clicking element '//a[@data-item-id="83"]'.</msg>
-<status status="PASS" starttime="20230404 15:45:45.811" endtime="20230404 15:45:48.451"/>
+<msg timestamp="20230411 11:48:09.973" level="INFO">Clicking element '//*[@id='ctl01_TemplateBody_WebPartManager1_gwpciModuleconnexion_ciModuleconnexion_SubmitButton']'.</msg>
+<status status="PASS" starttime="20230411 11:48:09.971" endtime="20230411 11:48:10.092"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>3</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230404 15:45:51.453" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20230404 15:45:48.452" endtime="20230404 15:45:51.453"/>
+<msg timestamp="20230411 11:48:13.094" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230411 11:48:10.093" endtime="20230411 11:48:13.094"/>
 </kw>
-<status status="PASS" starttime="20230404 15:45:11.342" endtime="20230404 15:45:51.454"/>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Home_Forfaits}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20230411 11:48:13.095" endtime="20230411 11:48:22.534"/>
 </kw>
-<status status="PASS" starttime="20230404 15:44:40.938" endtime="20230404 15:45:51.455"/>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Home_Forfaits}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230411 11:48:22.574" level="INFO">Element '//a[@data-item-id='37']' is displayed.</msg>
+<status status="PASS" starttime="20230411 11:48:22.534" endtime="20230411 11:48:22.574"/>
+</kw>
+<status status="PASS" starttime="20230411 11:48:09.447" endtime="20230411 11:48:22.575"/>
+</kw>
+<kw name="Fermer cas de test" library="KW_common_login_logout" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230411 11:48:22.578" endtime="20230411 11:48:24.965"/>
+</kw>
+<status status="PASS" starttime="20230411 11:48:22.577" endtime="20230411 11:48:24.967"/>
+</kw>
+<status status="PASS" starttime="20230411 11:48:03.752" endtime="20230411 11:48:24.968"/>
 </test>
-<status status="PASS" starttime="20230404 15:44:40.723" endtime="20230404 15:45:51.457"/>
+<test id="s1-t4" name="Verifier login et logout" line="18">
+<kw name="Ouvrir cas de test" library="KW_common_login_logout" type="SETUP">
+<arg>${URL_Page}</arg>
+<arg>${Navigateur}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL_Page}</arg>
+<arg>${Navigateur}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230411 11:48:24.989" level="INFO">Opening browser 'chrome' to base url 'https://entreprises-int.oiq.qc.ca/OIQ/EntrepriseConnexion/ConnexionSiteEmploiUAT.aspx?client_id=TestSiteEmploiUAT&amp;redirect_uri=https:%2F%2Foiqemploilaravel-uat.logientlab.com%2Fapi%2Fsocial_login_process%3Fprovider%3Dimis&amp;scope=&amp;response_type=code&amp;state=TbbAijdw3wbfPN7WRUM9mCZ4Xua3N2e6OnpDszkp'.</msg>
+<status status="PASS" starttime="20230411 11:48:24.987" endtime="20230411 11:48:28.688"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230411 11:48:28.689" endtime="20230411 11:48:28.829"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230411 11:48:30.831" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230411 11:48:28.830" endtime="20230411 11:48:30.831"/>
+</kw>
+<status status="PASS" starttime="20230411 11:48:24.984" endtime="20230411 11:48:30.832"/>
+</kw>
+<kw name=" Login et Logout">
+<arg>alfred@diageo.ca</arg>
+<arg>oiq1234</arg>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${page_de_connexion_username_Employeur}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20230411 11:48:30.835" endtime="20230411 11:48:30.919"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${page_de_connexion_username_Employeur}</arg>
+<arg>${text_username_Employeur}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230411 11:48:30.919" level="INFO">Typing text 'alfred@diageo.ca' into text field '//*[@id='ctl01_TemplateBody_WebPartManager1_gwpciModuleconnexion_ciModuleconnexion_signInUserName']'.</msg>
+<status status="PASS" starttime="20230411 11:48:30.919" endtime="20230411 11:48:31.099"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${page_de_connexion_password_Employeur}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20230411 11:48:31.099" endtime="20230411 11:48:31.197"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${page_de_connexion_password_Employeur}</arg>
+<arg>${text_password_Employeur}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20230411 11:48:31.199" level="INFO">Typing password into text field '//input[@name='ctl01$TemplateBody$WebPartManager1$gwpciModuleconnexion$ciModuleconnexion$signInPassword']'.</msg>
+<msg timestamp="20230411 11:48:31.256" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20230411 11:48:31.367" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20230411 11:48:31.198" endtime="20230411 11:48:31.368"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${page_de_connexion_bouton_connexion_Employeur}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230411 11:48:31.370" level="INFO">Clicking element '//*[@id='ctl01_TemplateBody_WebPartManager1_gwpciModuleconnexion_ciModuleconnexion_SubmitButton']'.</msg>
+<status status="PASS" starttime="20230411 11:48:31.368" endtime="20230411 11:48:31.489"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230411 11:48:34.491" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230411 11:48:31.490" endtime="20230411 11:48:34.491"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Home_Forfaits}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20230411 11:48:34.492" endtime="20230411 11:48:45.175"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Home_Forfaits}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230411 11:48:45.211" level="INFO">Element '//a[@data-item-id='37']' is displayed.</msg>
+<status status="PASS" starttime="20230411 11:48:45.176" endtime="20230411 11:48:45.212"/>
+</kw>
+<status status="PASS" starttime="20230411 11:48:30.833" endtime="20230411 11:48:45.212"/>
+</kw>
+<kw name="Fermer cas de test" library="KW_common_login_logout" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230411 11:48:45.214" endtime="20230411 11:48:47.499"/>
+</kw>
+<status status="PASS" starttime="20230411 11:48:45.213" endtime="20230411 11:48:47.501"/>
+</kw>
+<status status="PASS" starttime="20230411 11:48:24.974" endtime="20230411 11:48:47.503"/>
+</test>
+<test id="s1-t5" name="Verifier login et logout" line="18">
+<kw name="Ouvrir cas de test" library="KW_common_login_logout" type="SETUP">
+<arg>${URL_Page}</arg>
+<arg>${Navigateur}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL_Page}</arg>
+<arg>${Navigateur}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230411 11:48:47.522" level="INFO">Opening browser 'chrome' to base url 'https://entreprises-int.oiq.qc.ca/OIQ/EntrepriseConnexion/ConnexionSiteEmploiUAT.aspx?client_id=TestSiteEmploiUAT&amp;redirect_uri=https:%2F%2Foiqemploilaravel-uat.logientlab.com%2Fapi%2Fsocial_login_process%3Fprovider%3Dimis&amp;scope=&amp;response_type=code&amp;state=TbbAijdw3wbfPN7WRUM9mCZ4Xua3N2e6OnpDszkp'.</msg>
+<status status="PASS" starttime="20230411 11:48:47.520" endtime="20230411 11:48:51.726"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230411 11:48:51.726" endtime="20230411 11:48:51.860"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230411 11:48:53.862" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230411 11:48:51.860" endtime="20230411 11:48:53.862"/>
+</kw>
+<status status="PASS" starttime="20230411 11:48:47.517" endtime="20230411 11:48:53.863"/>
+</kw>
+<kw name=" Login et Logout">
+<arg>maelle@enerco.com</arg>
+<arg>oiq1234</arg>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${page_de_connexion_username_Employeur}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20230411 11:48:53.867" endtime="20230411 11:48:53.954"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${page_de_connexion_username_Employeur}</arg>
+<arg>${text_username_Employeur}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230411 11:48:53.956" level="INFO">Typing text 'maelle@enerco.com' into text field '//*[@id='ctl01_TemplateBody_WebPartManager1_gwpciModuleconnexion_ciModuleconnexion_signInUserName']'.</msg>
+<status status="PASS" starttime="20230411 11:48:53.955" endtime="20230411 11:48:54.184"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${page_de_connexion_password_Employeur}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20230411 11:48:54.185" endtime="20230411 11:48:54.275"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${page_de_connexion_password_Employeur}</arg>
+<arg>${text_password_Employeur}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20230411 11:48:54.277" level="INFO">Typing password into text field '//input[@name='ctl01$TemplateBody$WebPartManager1$gwpciModuleconnexion$ciModuleconnexion$signInPassword']'.</msg>
+<msg timestamp="20230411 11:48:54.339" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20230411 11:48:54.452" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20230411 11:48:54.276" endtime="20230411 11:48:54.453"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${page_de_connexion_bouton_connexion_Employeur}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230411 11:48:54.455" level="INFO">Clicking element '//*[@id='ctl01_TemplateBody_WebPartManager1_gwpciModuleconnexion_ciModuleconnexion_SubmitButton']'.</msg>
+<status status="PASS" starttime="20230411 11:48:54.453" endtime="20230411 11:48:54.593"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230411 11:48:57.593" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230411 11:48:54.593" endtime="20230411 11:48:57.593"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Home_Forfaits}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20230411 11:48:57.594" endtime="20230411 11:49:06.404"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Home_Forfaits}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230411 11:49:06.444" level="INFO">Element '//a[@data-item-id='37']' is displayed.</msg>
+<status status="PASS" starttime="20230411 11:49:06.404" endtime="20230411 11:49:06.445"/>
+</kw>
+<status status="PASS" starttime="20230411 11:48:53.865" endtime="20230411 11:49:06.445"/>
+</kw>
+<kw name="Fermer cas de test" library="KW_common_login_logout" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230411 11:49:06.448" endtime="20230411 11:49:08.729"/>
+</kw>
+<status status="PASS" starttime="20230411 11:49:06.446" endtime="20230411 11:49:08.730"/>
+</kw>
+<status status="PASS" starttime="20230411 11:48:47.508" endtime="20230411 11:49:08.731"/>
+</test>
+<test id="s1-t6" name="Verifier login et logout" line="18">
+<kw name="Ouvrir cas de test" library="KW_common_login_logout" type="SETUP">
+<arg>${URL_Page}</arg>
+<arg>${Navigateur}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL_Page}</arg>
+<arg>${Navigateur}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230411 11:49:08.750" level="INFO">Opening browser 'chrome' to base url 'https://entreprises-int.oiq.qc.ca/OIQ/EntrepriseConnexion/ConnexionSiteEmploiUAT.aspx?client_id=TestSiteEmploiUAT&amp;redirect_uri=https:%2F%2Foiqemploilaravel-uat.logientlab.com%2Fapi%2Fsocial_login_process%3Fprovider%3Dimis&amp;scope=&amp;response_type=code&amp;state=TbbAijdw3wbfPN7WRUM9mCZ4Xua3N2e6OnpDszkp'.</msg>
+<status status="PASS" starttime="20230411 11:49:08.749" endtime="20230411 11:49:12.400"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230411 11:49:12.401" endtime="20230411 11:49:12.538"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230411 11:49:14.539" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230411 11:49:12.539" endtime="20230411 11:49:14.539"/>
+</kw>
+<status status="PASS" starttime="20230411 11:49:08.747" endtime="20230411 11:49:14.540"/>
+</kw>
+<kw name=" Login et Logout">
+<arg>charlotte@diageo.ca</arg>
+<arg>oiq1234</arg>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${page_de_connexion_username_Employeur}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20230411 11:49:14.541" endtime="20230411 11:49:14.633"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${page_de_connexion_username_Employeur}</arg>
+<arg>${text_username_Employeur}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230411 11:49:14.635" level="INFO">Typing text 'charlotte@diageo.ca' into text field '//*[@id='ctl01_TemplateBody_WebPartManager1_gwpciModuleconnexion_ciModuleconnexion_signInUserName']'.</msg>
+<status status="PASS" starttime="20230411 11:49:14.634" endtime="20230411 11:49:14.821"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${page_de_connexion_password_Employeur}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20230411 11:49:14.822" endtime="20230411 11:49:14.903"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${page_de_connexion_password_Employeur}</arg>
+<arg>${text_password_Employeur}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20230411 11:49:14.905" level="INFO">Typing password into text field '//input[@name='ctl01$TemplateBody$WebPartManager1$gwpciModuleconnexion$ciModuleconnexion$signInPassword']'.</msg>
+<msg timestamp="20230411 11:49:14.953" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20230411 11:49:15.060" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20230411 11:49:14.903" endtime="20230411 11:49:15.060"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${page_de_connexion_bouton_connexion_Employeur}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230411 11:49:15.062" level="INFO">Clicking element '//*[@id='ctl01_TemplateBody_WebPartManager1_gwpciModuleconnexion_ciModuleconnexion_SubmitButton']'.</msg>
+<status status="PASS" starttime="20230411 11:49:15.061" endtime="20230411 11:49:15.181"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230411 11:49:18.183" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230411 11:49:15.182" endtime="20230411 11:49:18.183"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Home_Forfaits}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20230411 11:49:18.183" endtime="20230411 11:49:25.444"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Home_Forfaits}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230411 11:49:25.485" level="INFO">Element '//a[@data-item-id='37']' is displayed.</msg>
+<status status="PASS" starttime="20230411 11:49:25.445" endtime="20230411 11:49:25.486"/>
+</kw>
+<status status="PASS" starttime="20230411 11:49:14.540" endtime="20230411 11:49:25.486"/>
+</kw>
+<kw name="Fermer cas de test" library="KW_common_login_logout" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230411 11:49:25.489" endtime="20230411 11:49:27.788"/>
+</kw>
+<status status="PASS" starttime="20230411 11:49:25.488" endtime="20230411 11:49:27.789"/>
+</kw>
+<status status="PASS" starttime="20230411 11:49:08.737" endtime="20230411 11:49:27.791"/>
+</test>
+<test id="s1-t7" name="Verifier login et logout" line="18">
+<kw name="Ouvrir cas de test" library="KW_common_login_logout" type="SETUP">
+<arg>${URL_Page}</arg>
+<arg>${Navigateur}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL_Page}</arg>
+<arg>${Navigateur}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230411 11:49:27.809" level="INFO">Opening browser 'chrome' to base url 'https://entreprises-int.oiq.qc.ca/OIQ/EntrepriseConnexion/ConnexionSiteEmploiUAT.aspx?client_id=TestSiteEmploiUAT&amp;redirect_uri=https:%2F%2Foiqemploilaravel-uat.logientlab.com%2Fapi%2Fsocial_login_process%3Fprovider%3Dimis&amp;scope=&amp;response_type=code&amp;state=TbbAijdw3wbfPN7WRUM9mCZ4Xua3N2e6OnpDszkp'.</msg>
+<status status="PASS" starttime="20230411 11:49:27.807" endtime="20230411 11:49:31.498"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230411 11:49:31.498" endtime="20230411 11:49:31.639"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230411 11:49:33.641" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230411 11:49:31.640" endtime="20230411 11:49:33.641"/>
+</kw>
+<status status="PASS" starttime="20230411 11:49:27.804" endtime="20230411 11:49:33.642"/>
+</kw>
+<kw name=" Login et Logout">
+<arg>zoe@diageo.ca</arg>
+<arg>oiq1234</arg>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${page_de_connexion_username_Employeur}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20230411 11:49:33.645" endtime="20230411 11:49:33.739"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${page_de_connexion_username_Employeur}</arg>
+<arg>${text_username_Employeur}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230411 11:49:33.740" level="INFO">Typing text 'zoe@diageo.ca' into text field '//*[@id='ctl01_TemplateBody_WebPartManager1_gwpciModuleconnexion_ciModuleconnexion_signInUserName']'.</msg>
+<status status="PASS" starttime="20230411 11:49:33.739" endtime="20230411 11:49:33.916"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${page_de_connexion_password_Employeur}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20230411 11:49:33.916" endtime="20230411 11:49:34.012"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${page_de_connexion_password_Employeur}</arg>
+<arg>${text_password_Employeur}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20230411 11:49:34.015" level="INFO">Typing password into text field '//input[@name='ctl01$TemplateBody$WebPartManager1$gwpciModuleconnexion$ciModuleconnexion$signInPassword']'.</msg>
+<msg timestamp="20230411 11:49:34.073" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20230411 11:49:34.182" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20230411 11:49:34.013" endtime="20230411 11:49:34.183"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${page_de_connexion_bouton_connexion_Employeur}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230411 11:49:34.185" level="INFO">Clicking element '//*[@id='ctl01_TemplateBody_WebPartManager1_gwpciModuleconnexion_ciModuleconnexion_SubmitButton']'.</msg>
+<status status="PASS" starttime="20230411 11:49:34.183" endtime="20230411 11:49:34.298"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230411 11:49:37.299" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230411 11:49:34.299" endtime="20230411 11:49:37.299"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Home_Forfaits}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20230411 11:49:37.299" endtime="20230411 11:49:45.272"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Home_Forfaits}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230411 11:49:45.313" level="INFO">Element '//a[@data-item-id='37']' is displayed.</msg>
+<status status="PASS" starttime="20230411 11:49:45.274" endtime="20230411 11:49:45.313"/>
+</kw>
+<status status="PASS" starttime="20230411 11:49:33.643" endtime="20230411 11:49:45.314"/>
+</kw>
+<kw name="Fermer cas de test" library="KW_common_login_logout" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230411 11:49:45.317" endtime="20230411 11:49:47.702"/>
+</kw>
+<status status="PASS" starttime="20230411 11:49:45.315" endtime="20230411 11:49:47.704"/>
+</kw>
+<status status="PASS" starttime="20230411 11:49:27.796" endtime="20230411 11:49:47.705"/>
+</test>
+<test id="s1-t8" name="Verifier login et logout" line="18">
+<kw name="Ouvrir cas de test" library="KW_common_login_logout" type="SETUP">
+<arg>${URL_Page}</arg>
+<arg>${Navigateur}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL_Page}</arg>
+<arg>${Navigateur}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230411 11:49:47.725" level="INFO">Opening browser 'chrome' to base url 'https://entreprises-int.oiq.qc.ca/OIQ/EntrepriseConnexion/ConnexionSiteEmploiUAT.aspx?client_id=TestSiteEmploiUAT&amp;redirect_uri=https:%2F%2Foiqemploilaravel-uat.logientlab.com%2Fapi%2Fsocial_login_process%3Fprovider%3Dimis&amp;scope=&amp;response_type=code&amp;state=TbbAijdw3wbfPN7WRUM9mCZ4Xua3N2e6OnpDszkp'.</msg>
+<status status="PASS" starttime="20230411 11:49:47.723" endtime="20230411 11:49:52.492"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230411 11:49:52.493" endtime="20230411 11:49:52.629"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230411 11:49:54.631" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230411 11:49:52.630" endtime="20230411 11:49:54.631"/>
+</kw>
+<status status="PASS" starttime="20230411 11:49:47.721" endtime="20230411 11:49:54.632"/>
+</kw>
+<kw name=" Login et Logout">
+<arg>william@diageo.ca</arg>
+<arg>oiq1234</arg>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${page_de_connexion_username_Employeur}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20230411 11:49:54.634" endtime="20230411 11:49:54.712"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${page_de_connexion_username_Employeur}</arg>
+<arg>${text_username_Employeur}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230411 11:49:54.713" level="INFO">Typing text 'william@diageo.ca' into text field '//*[@id='ctl01_TemplateBody_WebPartManager1_gwpciModuleconnexion_ciModuleconnexion_signInUserName']'.</msg>
+<status status="PASS" starttime="20230411 11:49:54.712" endtime="20230411 11:49:54.891"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${page_de_connexion_password_Employeur}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20230411 11:49:54.892" endtime="20230411 11:49:54.973"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${page_de_connexion_password_Employeur}</arg>
+<arg>${text_password_Employeur}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20230411 11:49:54.976" level="INFO">Typing password into text field '//input[@name='ctl01$TemplateBody$WebPartManager1$gwpciModuleconnexion$ciModuleconnexion$signInPassword']'.</msg>
+<msg timestamp="20230411 11:49:55.024" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20230411 11:49:55.129" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20230411 11:49:54.974" endtime="20230411 11:49:55.130"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${page_de_connexion_bouton_connexion_Employeur}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230411 11:49:55.133" level="INFO">Clicking element '//*[@id='ctl01_TemplateBody_WebPartManager1_gwpciModuleconnexion_ciModuleconnexion_SubmitButton']'.</msg>
+<status status="PASS" starttime="20230411 11:49:55.131" endtime="20230411 11:49:55.246"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230411 11:49:58.248" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230411 11:49:55.247" endtime="20230411 11:49:58.248"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Home_Forfaits}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20230411 11:49:58.248" endtime="20230411 11:50:04.754"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${page_Site_emploi_Home_Forfaits}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230411 11:50:04.816" level="INFO">Element '//a[@data-item-id='37']' is displayed.</msg>
+<status status="PASS" starttime="20230411 11:50:04.756" endtime="20230411 11:50:04.817"/>
+</kw>
+<status status="PASS" starttime="20230411 11:49:54.634" endtime="20230411 11:50:04.817"/>
+</kw>
+<kw name="Fermer cas de test" library="KW_common_login_logout" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230411 11:50:04.821" endtime="20230411 11:50:07.319"/>
+</kw>
+<status status="PASS" starttime="20230411 11:50:04.820" endtime="20230411 11:50:07.319"/>
+</kw>
+<status status="PASS" starttime="20230411 11:49:47.712" endtime="20230411 11:50:07.320"/>
+</test>
+<status status="PASS" starttime="20230411 11:47:12.654" endtime="20230411 11:50:07.323"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="8" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="CT 3e etape processus achat Paypal">CT 3e etape processus achat Paypal</stat>
+<stat pass="8" fail="0" skip="0" id="s1" name="CT DataD Login">CT DataD Login</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20230411 11:47:39.413" level="WARN">Multiple tests with name 'Verifier login et logout' executed in suite 'CT DataD Login'.</msg>
+<msg timestamp="20230411 11:48:03.750" level="WARN">Multiple tests with name 'Verifier login et logout' executed in suite 'CT DataD Login'.</msg>
+<msg timestamp="20230411 11:48:24.973" level="WARN">Multiple tests with name 'Verifier login et logout' executed in suite 'CT DataD Login'.</msg>
+<msg timestamp="20230411 11:48:47.507" level="WARN">Multiple tests with name 'Verifier login et logout' executed in suite 'CT DataD Login'.</msg>
+<msg timestamp="20230411 11:49:08.735" level="WARN">Multiple tests with name 'Verifier login et logout' executed in suite 'CT DataD Login'.</msg>
+<msg timestamp="20230411 11:49:27.794" level="WARN">Multiple tests with name 'Verifier login et logout' executed in suite 'CT DataD Login'.</msg>
+<msg timestamp="20230411 11:49:47.710" level="WARN">Multiple tests with name 'Verifier login et logout' executed in suite 'CT DataD Login'.</msg>
 </errors>
 </robot>
